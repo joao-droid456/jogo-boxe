@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"
+    />
+    <meta name="theme-color" content="#080b19" />
+    <meta
+      name="description"
+      content="Entre na arena neon. Desvie, evolua e sobreviva por cinco minutos. Jogue no celular ou PC."
+    />
+    <title>NEON RUSH · Arena de sobrevivência</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="game" aria-label="Arena do jogo"></canvas>
+    <div class="vignette"></div>
+    <header>
+      <a class="brand" href="./" aria-label="NEON RUSH início"
+        ><span class="brand-icon">N</span> NEON<span>RUSH</span></a
+      >
+      <div class="header-right">
+        <span class="live-dot"></span><span id="status">ARENA 01</span
+        ><button id="sound" class="icon-button" aria-label="Ativar som">♪ <span>OFF</span></button>
+      </div>
+    </header>
+    <main id="home" class="screen home">
+      <div class="intro">
+        <div class="eyebrow"><span></span> SOBREVIVÊNCIA ARCADE</div>
+        <h1>ENTRE.<br />EVOLUA.<br /><em>SOBREVIVA.</em></h1>
+        <p>Uma arena. Infinitos inimigos.<br />Cinco minutos para virar uma lenda.</p>
+        <div class="weapon-selection">
+          <span class="weapon-heading">ESCOLHA SUA ARMA INICIAL</span>
+          <div
+            id="weapon-options"
+            class="weapon-options"
+            role="radiogroup"
+            aria-label="Arma inicial"
+          ></div>
+          <p id="weapon-description" class="weapon-description"></p>
+        </div>
+        <button id="start" class="primary">ENTRAR NA ARENA <span>↗</span></button>
+        <div class="best">
+          SEU RECORDE <strong id="home-best">00000</strong><span>SEM DOWNLOAD · CELULAR + PC</span>
+        </div>
+      </div>
+      <div class="hero-label">
+        <span class="crosshair">+</span
+        ><span>VOCÊ CONTRA A HORDA<br /><b>ATAQUE AUTOMÁTICO. REFLEXOS SEUS.</b></span>
+      </div>
+      <footer>
+        <span>01 / DISTRITO ELÉTRICO</span><span>WASD / SETAS OU CONTROLE POR TOQUE</span>
+      </footer>
+    </main>
+    <section id="hud" hidden>
+      <div class="hud-left">
+        <span class="tiny">INTEGRIDADE</span>
+        <div id="hearts"></div>
+        <div class="level-row">
+          NÍVEL <b id="level">1</b>
+          <div class="xp-track"><i id="xp"></i></div>
+        </div>
+        <div id="power-bar" class="power-bar" aria-label="Poderes ativos"></div>
+      </div>
+      <div class="hud-center">
+        <span id="goal" class="tiny">SOBREVIVA ATÉ 05:00</span><strong id="timer">00:00</strong>
+      </div>
+      <div class="hud-right">
+        <span class="tiny">PONTUAÇÃO</span><strong id="score">00000</strong
+        ><button id="pause" class="icon-button" aria-label="Pausar">Ⅱ</button>
+      </div>
+    </section>
+    <div id="controls" hidden>
+      <div id="joystick" aria-label="Arraste para mover">
+        <div id="stick"></div>
+        <span>MOVER</span>
+      </div>
+      <button id="dash" aria-label="Arrancada"><span>ϟ</span><small>ARRANCADA</small></button>
+      <div class="keyboard-hint">
+        WASD / SETAS <span>MOVER</span> &nbsp; ESPAÇO <span>ARRANCADA</span>
+      </div>
+    </div>
+    <div id="modal" class="modal" hidden>
+      <div class="modal-panel">
+        <div id="modal-tag" class="eyebrow">SISTEMA</div>
+        <h2 id="modal-title"></h2>
+        <p id="modal-copy"></p>
+        <div id="choices"></div>
+        <div id="results"></div>
+        <button id="resume" class="primary" hidden>CONTINUAR <span>→</span></button
+        ><button id="restart" class="primary" hidden>JOGAR DE NOVO <span>↗</span></button
+        ><button id="share" class="secondary" hidden>COPIAR DESAFIO ↗</button
+        ><button id="exit" class="secondary exit-button" type="button" hidden>
+          SAIR DA PARTIDA</button
+        ><button id="back" class="text-button" hidden>VOLTAR AO INÍCIO</button>
+      </div>
+    </div>
+    <div id="toast" role="status"></div>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
